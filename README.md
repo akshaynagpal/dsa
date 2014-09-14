@@ -1,4 +1,4 @@
-java
+Data Structures and Algorithms
 ====
 
-useful java codes
+Implementation of useful Data Structures and the operations on them. 
