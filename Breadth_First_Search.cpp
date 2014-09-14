@@ -25,7 +25,12 @@ SOFTWARE.
 
 /*
 ABOUT BREADTH FIRST SEARCH
-In graph theory, breadth-first search (BFS) is a strategy for searching in a graph when search is limited to essentially two operations: (a) visit and inspect a node of a graph; (b) gain access to visit the nodes that neighbor the currently visited node. The BFS begins at a root node and inspects all the neighboring nodes. Then for each of those neighbor nodes in turn, it inspects their neighbor nodes which were unvisited, and so on.
+In graph theory, breadth-first search (BFS) is a strategy for searching in a graph 
+when search is limited to essentially two operations: (a) visit and inspect a node
+of a graph; (b) gain access to visit the nodes that neighbor the currently visited
+node. The BFS begins at a root node and inspects all the neighboring nodes. Then 
+for each of those neighbor nodes in turn, it inspects their neighbor nodes which
+were unvisited, and so on.
 */
 
 //header files
