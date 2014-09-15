@@ -30,7 +30,7 @@ when search is limited to essentially two operations: (a) visit and inspect a no
 of a graph; (b) gain access to visit the nodes that neighbor the currently visited
 node. The BFS begins at a root node and inspects all the neighboring nodes. Then 
 for each of those neighbor nodes in turn, it inspects their neighbor nodes which
-were unvisited, and so on.
+were unvisited, and so on till the goal is reached.
 */
 
 //header files
@@ -42,19 +42,21 @@ int a[20][20],q[20],n,i,j,f=0,r=-1,visited[20];
 //breadth first search function
 void bfs(int v)
 {
+	
 	for(int i=1;i<=n;i++)
 	{
 		if(a[v][i] && !visited[i])
 		{
 			q[++r]=i;
-		}
-		if(f<=r)
-		{
-
-			visited[q[f]]=1;
-			bfs(q[f++]);
+			visited[i]=1;
 		}
 	}
+		while(f<=r)
+		{
+			cout<<q[f]<<"\t";
+			bfs(q[f++]);
+		}
+	
 }
 
 
@@ -80,16 +82,20 @@ int main()
 	}
 	cout<<"Enter starting vertex..\n";
 	cin>>v;
+	visited[v]=1;
+	cout<<"The Breadth Firt Traversal is:\t"<<v<<"\t";
 	bfs(v);
-	cout<<"The  nodes which are reachable are:\n";
+	
+//cout<<"The  nodes which are reachable are:\n";
 
-	for(i=1;i<=n;i++)
-	{
-		if(visited[i])
-		cout<<i<<"\t"; //vertices that are reachable
-		else
-		cout<<"NA\t"; //vertices that are not reachable
-	}
+//	for(i=1;i<=n;i++)
+//	{
+//		if(visited[i])
+//		cout<<i<<"\t"; //vertices that are reachable
+//		else
+//		cout<<"NA\t"; //vertices that are not reachable
+//	}
+
 getch();
 return 0;
 }
