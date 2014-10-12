@@ -36,17 +36,18 @@ each branch before backtracking.
 #include<conio.h>
 
 using namespace std;
-int a[20][20],r[20],n;
+int a[20][20],visited[20],n;
 
 //depth first search function
 void dfs(int v)
 {
-	int i;
-	r[v]=1;
-
-	for(i=1;i<=n;i++)
+	cout<<"v: "<<v<<"\n";
+	
+	visited[v]=1;
+	cout<<"visited[v]="<<visited[v]<<"\n";
+	for(int i=1;i<=n;i++)
 	{
-		if(a[v][i] && !r[i])
+		if(a[v][i] && !visited[i])
 		{
 			cout<<v<<" -> "<<i<<"\n";
 			dfs(i);
@@ -62,7 +63,7 @@ int main()
 	cin>>n;
 	for(i=1;i<=n;i++)
 	{
-		r[i]=0;
+		visited[i]=0;
 		for(int j=1;j<=n;j++)
 		a[i][j]=0;
 	}
@@ -78,17 +79,19 @@ int main()
 			cin>>a[i][j];
 	     }
 	}
+	
 	dfs(1);
-	cout<<"\n";
-	for(i=1;i<=n;i++)
-	{
-		if(r[i]) //checking if all vertices are reachable from every vertex
-		count++;
-	}
-	if(count==n)
-	cout<<"Graph is connected";
-	else
-	cout<<"Graph is disconnected";	
+	
+//	cout<<"\n";
+//	for(i=1;i<=n;i++)
+//	{
+//		if(r[i]) //checking if all vertices are reachable from every vertex
+//		count++;
+//	}
+//	if(count==n)
+//	cout<<"Graph is connected";
+//	else
+//	cout<<"Graph is disconnected";	
 	getch();
 	return 0;
 }
