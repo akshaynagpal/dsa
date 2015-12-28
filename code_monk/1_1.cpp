@@ -1,3 +1,7 @@
+/*
+Problem Link: https://www.hackerearth.com/code-monk-array-strings/algorithm/terrible-chandu/
+*/
+
 #include <iostream>
 #include <string>
 using namespace std;
